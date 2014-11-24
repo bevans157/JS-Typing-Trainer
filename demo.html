@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Typing Trainer Demo</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="typingtrainer.js"></script>
+	
+	<script src="_keyboard_osx_us.js"></script>
+	<script src="_keyboard_osx_us_mini.js"></script>
+	<script src="_keyboard_osx_uk.js"></script>
+
+	<script src="_lesson_standard.js"></script>
+	<script src="_lesson_developer.js"></script>
+
+	<link  type='text/css' rel="stylesheet" href="typingtrainer.css" />
+</head>
+<body>
+
+<div class="_tt_box">
+
+<div class="_tt_header_left"><h1>JS Typing Trainer</h1></div><br clear="all" />
+
+<div class="_tt_header_left">LESSON:&nbsp;<select id="_tt_lesson_list" name="_tt_lesson_list"></select></div>
+<div class="_tt_header_left">Line:&nbsp;<select id="_tt_line_list" name="_tt_line_list"></select></div>
+<div class="_tt_header_right" id="_tt_display_report">Reporting Values</div>
+<br clear="all"/>
+<div class="_tt_center_wrap">
+	<textarea id="_tt_display_input" name="_tt_display_input"></textarea>
+	<div id="_tt_display_line" name="_tt_display_line">demo</div>
+</div>
+<div id="_tt_user_instruction"  class="_tt_center_wrap">Program instruction</div>
+<div id="_tt_keyboard_div" >Keyboard Display</div>
+<br clear="all"/>
+<div id="_tt_keyboard_selector_div" >Select a keyboard layout:&nbsp;<select id="_tt_keyboard_list" name="_tt_keyboard_list">
+</select></div>
+
+
+</div>
+
+
+
+</body>
+</html>	
