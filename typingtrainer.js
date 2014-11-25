@@ -91,9 +91,19 @@ $( document ).ready(function() {
 		if (event.which == 17) {return}; // ignore control press
 		if (event.which == 18) {return}; // ignore option press
 		if (event.which == 91) {return}; // ignore command press
+		if (event.which == 8) { // Backspace
+			if (state == "run") {
+				typedStack.pop();
+				renderLine();
+				return;
+			}
+			else{
+				return;
+			}
+		};
 		var shifted = event.shiftKey;
 		var key = event.which;
-		if (key == 13) {
+		if (key == 13) { // return key
 			if (state == "run") {
 				next = reportCard.length;
 				reportCard[next] = {
@@ -104,15 +114,17 @@ $( document ).ready(function() {
 					"pass"		:""
 				};
 				if ( _tt_lessons[_tt_lesson]["lines"].length > (_tt_line +1) ) {
-console.log(""+_tt_lessons[_tt_lesson]["lines"].length+":"+_tt_line);
-					_tt_line++;
+					// Advance tonext lesson
+					lineStack = _tt_lessons[_tt_lesson]["lines"][_tt_line]["letters"].split("");
+					if (_tt_lessons[_tt_lesson]["lines"][_tt_line]["wpm"] <= genWPM() && 
+						_tt_lessons[_tt_lesson]["lines"][_tt_line]["accuracy"] <= genAccuracy() ) {
+						_tt_line++;
+					}
 					setLine(_tt_line);
 				}
 				else {
 					setState("none");
 				}
-// END LINE
-// NEXT LINE			
 			}
 		}
 		else{
@@ -144,9 +156,9 @@ console.log(""+_tt_lessons[_tt_lesson]["lines"].length+":"+_tt_line);
 		var miss = 0;
 		var cursorFlag = true;
 		for (i = 0; i < Math.max(typedStack.length, lineStack.length); i++) { 
-			if ((typedStack[i] === lineStack[i]) || ( typeof typedStack[i] === 'undefined' )){
+			if ((typedStack[i] === lineStack[i]) || ( typeof typedStack[i] === 'undefined' ) || ( typeof typedStack[i] === '' ) ){
 				charOut = (lineStack[i]==" ")?"&nbsp;":lineStack[i];
-				if (typeof typedStack[i] === 'undefined') {
+				if ((typeof typedStack[i] === 'undefined') || ( typeof typedStack[i] === '' )) {
 					if (cursorFlag){
 						charOut = '<span class="cursor">'+charOut+'</span>';
 						cursorFlag = false;
@@ -226,9 +238,11 @@ console.log(""+_tt_lessons[_tt_lesson]["lines"].length+":"+_tt_line);
 				keyMap[keyCode][false] = keyChar;
 				keyMap[keyCode][true] = keyShiftChar;
 				var keyLabel		= key[3];
-				var keyWidth		= key[4];
-				var keyHeight		= key[5];
-				var keyStyle		= key[6];
+				var keyColor		= key[4];
+				var keyWidth		= key[5];
+				var keyHeight		= key[6];
+				var keyStyle		= key[7];
+				var keyInnerStyle	= key[8];
 
 				keyLabel = ((typeof keyLabel === 'undefined')||(keyLabel == ""))?"":keyLabel.replace(/\n/, "<br />");
 				keyWidth = ((typeof keyWidth === 'undefined')||(keyWidth == ""))?"":keyWidth;
@@ -239,7 +253,7 @@ console.log(""+_tt_lessons[_tt_lesson]["lines"].length+":"+_tt_line);
 				if (keyHeight != "") {style += 'height:' + keyHeight + 'px;line-height:' + (keyHeight-6) + 'px;';}
 				if (keyStyle != "") {style += keyStyle;}
 				if (keyLabel != "") {
-					htmlOut += '<div class="_tt_key" style="'+style+'"><div id="kb_' + id + '">&nbsp;<span>' + keyLabel + '</span>&nbsp;</div></div>';
+					htmlOut += '<div class="_tt_key" style="'+style+'"><div id="kb_' + id + '" style="'+keyInnerStyle+'">&nbsp;<span>' + keyLabel + '</span>&nbsp;</div></div>';
 				}
 				else {
 					htmlOut += '<div class="_tt_keygap" style="width:' + keyWidth + 'px;">&nbsp;</div>';
