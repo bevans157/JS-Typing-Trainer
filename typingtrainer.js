@@ -119,7 +119,7 @@ $( document ).ready(function() {
 				next = reportCard.length;
 				reportCard[next] = {
 					"lesson"	:_tt_lesson,
-					"line"		:_tt_lessons[_tt_lesson]["lines"][_tt_line]["titleha"],
+					"line"		:_tt_lessons[_tt_lesson]["lines"][_tt_line]["title"],
 					"wpm"		:genWPM(),
 					"accuracy"	:genAccuracy()
 				};
