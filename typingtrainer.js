@@ -123,9 +123,7 @@ $( document ).ready(function() {
 					"wpm"		:genWPM(),
 					"accuracy"	:genAccuracy()
 				};
-console.log(_tt_lessons[_tt_lesson]["lines"].length+'=='+_tt_line+'=='+(1+_tt_line));
 				if ( _tt_lessons[_tt_lesson]["lines"].length > (1+_tt_line) ) {
-console.log('NEXT');
 					// Advance tonext lesson
 					lineStack = _tt_lessons[_tt_lesson]["lines"][_tt_line]["letters"].split("");
 					if (_tt_lessons[_tt_lesson]["lines"][_tt_line]["wpm"] <= genWPM() && 
@@ -135,7 +133,7 @@ console.log('NEXT');
 					setLine(_tt_line);
 				}
 				else {
-					setState("none");
+					setState("finish");
 				}
 			}
 		}
@@ -242,6 +240,10 @@ console.log('NEXT');
 		if (newState == "none"){
 			newState = "none";
 			userMessage("");
+		}
+		else if (newState == "finish") {
+			newState = "none";
+			userMessage("Lesson Finished.");
 		}
 		else if (newState == "run") {
 			newState = "run";
