@@ -72,12 +72,12 @@ _tt_keyboards["osx_us Left Hand"] = [
 			"equals"		:["187",	"=",	"+",	"+\n=",			"#99ff99",	45],
 			"backspace"		:["8",		"",		"",		"del",			"#99ff99",	73],
 			"g_1"			:["",		"",		"",		"",				"",			30],
-			"function"		:["",		"",		"",		"fn",			"#ff6666",	45,	"",	"",	'color: #cccccc;'],
-			"home"			:["36",		"",		"",		"home",			"#ffdd99",	45],
-			"pageup"		:["33",		"",		"",		"page<br/>up",	"#ffff99",	45],
+			"function"		:["",		"",		"",		"fn",			"#ff6666",	45,	"",	"",	'color: #cccccc;'], 
+			"home"			:["",		"",		"",		"home",			"#ffdd99",	45,	"",	"",	'color: #cccccc;'], // 36
+			"pageup"		:["",		"",		"",		"page<br/>up",	"#ffff99",	45,	"",	"",	'color: #cccccc;'], // 33
 			"g_2"			:["",		"",		"",		"",				"",			30],
-			"clear"			:["12",		"",		"",		"clear",		"#ff6666",	45],
-			"numpadequals"	:["187",	"",		"",		"=",			"#ffdd99",	45],
+			"clear"			:["",		"",		"",		"clear",		"#ff6666",	45,	"",	"",	'color: #cccccc;'], // 12
+			"numpadequals"	:["187",	"=",	"",		"=",			"#ffdd99",	45],
 			"numpadslash"	:["111",	"/",	"/",	"/",			"#ffff99",	45],
 			"numpadstar"	:["106",	"*",	"*",	"*",			"#99ff99",	45]
 		}],[
@@ -97,9 +97,9 @@ _tt_keyboards["osx_us Left Hand"] = [
 			"rsqrb"			:["221",	"]",	"}",	"}\n]",			"#99ff99",	45],
 			"bslash"		:["220",	"\\",	"|",	"|\n\\",		"#99ff99",	45],
 			"g_1"			:["",		"",		"",		"",				"",			30],
-			"delete"		:["46",		"",		"",		"del",			"#ff6666",	45],
-			"end"			:["35",		"",		"",		"end",			"#ffdd99",	45],
-			"pagedown"		:["34",		"",		"",		"page\ndown",	"#ffff99",	45],
+			"delete"		:["",		"",		"",		"del",			"#ff6666",	45,	"",	"",	'color: #cccccc;'], // 46
+			"end"			:["",		"",		"",		"end",			"#ffdd99",	45,	"",	"",	'color: #cccccc;'], // 35
+			"pagedown"		:["",		"",		"",		"page\ndown",	"#ffff99",	45,	"",	"",	'color: #cccccc;'], // 34
 			"g_2"			:["",		"",		"",		"",				"",			30],
 			"numpad7"		:["103",	"7",	"7",	"7",			"#ff6666",	45],
 			"numpad8"		:["104",	"8",	"8",	"8",			"#ffdd99",	45],
@@ -140,7 +140,7 @@ _tt_keyboards["osx_us Left Hand"] = [
 			"fslash"		:["191",	"/",	"?",	"/\n?",			"#99ff99",	45],
 			"rshift"		:["16",		"",		"",		"shift",		"#cccccc",	104],
 			"g_1"			:["",		"",		"",		"",				"",			75],
-			"arrowup"		:["38",		"",		"",		"&uarr;",		"#ffdd99",	45],
+			"arrowup"		:["",		"",		"",		"&uarr;",		"#ffdd99",	45,	"",	"",	'color: #cccccc;'], // 38
 			"g_2"			:["",		"",		"",		"",				"",			75],
 			"numpad1"		:["97",		"1",	"1",	"1",			"#ff6666",	45],
 			"numpad2"		:["98",		"2",	"2",	"2",			"#ffdd99",	45],
@@ -156,9 +156,9 @@ _tt_keyboards["osx_us Left Hand"] = [
 			"roption"		:["18",		"",		"",		"opt",			"#cccccc",	56],
 			"rcontrol"		:["17",		"",		"",		"ctrl",			"#cccccc",	69],
 			"g_1"			:["",		"",		"",		"",				"",			30],
-			"arrowleft"		:["37",		"",		"",		"&larr;",		"#ff6666",	45],
-			"arrowdown"		:["40",		"",		"",		"&darr;",		"#ffdd99",	45],
-			"arrowright"	:["39",		"",		"",		"&rarr;",		"#ffff99",	45],
+			"arrowleft"		:["",		"",		"",		"&larr;",		"#ff6666",	45,	"",	"",	'color: #cccccc;'], // 37
+			"arrowdown"		:["",		"",		"",		"&darr;",		"#ffdd99",	45,	"",	"",	'color: #cccccc;'], // 40
+			"arrowright"	:["",		"",		"",		"&rarr;",		"#ffff99",	45,	"",	"",	'color: #cccccc;'], // 39
 			"g_2"			:["",		"",		"",		"",				"",			30],
 			"numpad0"		:["96",		"0",	"0",	"0",			"#ff6666",	90],
 			"numpadperiod"	:["110",	".",	".",	".",			"#ffff99",	45]

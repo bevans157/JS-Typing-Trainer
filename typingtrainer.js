@@ -123,7 +123,9 @@ $( document ).ready(function() {
 					"wpm"		:genWPM(),
 					"accuracy"	:genAccuracy()
 				};
-				if ( _tt_lessons[_tt_lesson]["lines"].length > (_tt_line +1) ) {
+console.log(_tt_lessons[_tt_lesson]["lines"].length+'=='+_tt_line+'=='+(1+_tt_line));
+				if ( _tt_lessons[_tt_lesson]["lines"].length > (1+_tt_line) ) {
+console.log('NEXT');
 					// Advance tonext lesson
 					lineStack = _tt_lessons[_tt_lesson]["lines"][_tt_line]["letters"].split("");
 					if (_tt_lessons[_tt_lesson]["lines"][_tt_line]["wpm"] <= genWPM() && 
@@ -152,7 +154,7 @@ $( document ).ready(function() {
 	}
 
 	function setLine(line) {
-		_tt_line = line
+		_tt_line = parseInt(line);
 		typedStack = [];
 		lineStack = _tt_lessons[_tt_lesson]["lines"][_tt_line]["letters"].split("");
 		renderLine();

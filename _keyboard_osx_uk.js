@@ -73,11 +73,11 @@ _tt_keyboards["osx_uk 2 hand"] = [
 			"backspace"		:["8",		"",		"",		"del",			"#ffccff",	73],
 			"g_1"			:["",		"",		"",		"",				"",			30],
 			"function"		:["",		"",		"",		"fn",			"#99ffff",	45,	"",	"",	'color: #cccccc;'],
-			"home"			:["36",		"",		"",		"home",			"#9999ff",	45],
-			"pageup"		:["33",		"",		"",		"page<br/>up",	"#cc99cc",	45],
+			"home"			:["",		"",		"",		"home",			"#9999ff",	45,	"",	"",	'color: #cccccc;'], // 36
+			"pageup"		:["",		"",		"",		"page<br/>up",	"#cc99cc",	45,	"",	"",	'color: #cccccc;'], // 33
 			"g_2"			:["",		"",		"",		"",				"",			30],
-			"clear"			:["12",		"",		"",		"clear",		"#99ffff",	45],
-			"numpadequals"	:["",		"",		"",		"=",			"#9999ff",	45],
+			"clear"			:["",		"",		"",		"clear",		"#99ffff",	45,	"",	"",	'color: #cccccc;'], // 12
+			"numpadequals"	:["187",	"=",	"",		"=",			"#9999ff",	45],
 			"numpadslash"	:["111",	"/",	"/",	"/",			"#cc99cc",	45],
 			"numpadstar"	:["106",	"*",	"*",	"*",			"#ffccff",	45]
 		}],[
@@ -97,9 +97,9 @@ _tt_keyboards["osx_uk 2 hand"] = [
 			"rsqrb"			:["221",	"]",	"}",	"}\n]",			"#ffccff",	45],
 			"bslash"		:["220",	"\\",	"|",	"|\n\\",		"#ffccff",	45],
 			"g_1"			:["",		"",		"",		"",				"",			30],
-			"delete"		:["46",		"",		"",		"del",			"#99ffff",	45],
-			"end"			:["35",		"",		"",		"end",			"#9999ff",	45],
-			"pagedown"		:["34",		"",		"",		"page\ndown",	"#cc99cc",	45],
+			"delete"		:["",		"",		"",		"del",			"#99ffff",	45,	"",	"",	'color: #cccccc;'], // 46
+			"end"			:["",		"",		"",		"end",			"#9999ff",	45,	"",	"",	'color: #cccccc;'], // 35
+			"pagedown"		:["",		"",		"",		"page\ndown",	"#cc99cc",	45,	"",	"",	'color: #cccccc;'], // 34
 			"g_2"			:["",		"",		"",		"",				"",			30],
 			"numpad7"		:["103",	"7",	"7",	"7",			"#99ffff",	45],
 			"numpad8"		:["104",	"8",	"8",	"8",			"#9999ff",	45],
@@ -140,7 +140,7 @@ _tt_keyboards["osx_uk 2 hand"] = [
 			"fslash"		:["191",	"/",	"?",	"/\n?",			"#ffccff",	45],
 			"rshift"		:["16",		"",		"",		"shift",		"#ffccff",	104],
 			"g_1"			:["",		"",		"",		"",				"",			75],
-			"arrowup"		:["38",		"",		"",		"&uarr;",		"#9999ff",	45],
+			"arrowup"		:["",		"",		"",		"&uarr;",		"#9999ff",	45,	"",	"",	'color: #cccccc;'], // 38
 			"g_2"			:["",		"",		"",		"",				"",			75],
 			"numpad1"		:["97",		"1",	"1",	"1",			"#99ffff",	45],
 			"numpad2"		:["98",		"2",	"2",	"2",			"#9999ff",	45],
@@ -156,9 +156,9 @@ _tt_keyboards["osx_uk 2 hand"] = [
 			"roption"		:["18",		"",		"",		"opt",			"#ffccff",	56],
 			"rcontrol"		:["17",		"",		"",		"ctrl",			"#ffccff",	69],
 			"g_1"			:["",		"",		"",		"",				"",			30],
-			"arrowleft"		:["37",		"",		"",		"&larr;",		"#99ffff",	45],
-			"arrowdown"		:["40",		"",		"",		"&darr;",		"#9999ff",	45],
-			"arrowright"	:["39",		"",		"",		"&rarr;",		"#cc99cc",	45],
+			"arrowleft"		:["",		"",		"",		"&larr;",		"#99ffff",	45,	"",	"",	'color: #cccccc;'], // 37
+			"arrowdown"		:["",		"",		"",		"&darr;",		"#9999ff",	45,	"",	"",	'color: #cccccc;'], // 40
+			"arrowright"	:["",		"",		"",		"&rarr;",		"#cc99cc",	45,	"",	"",	'color: #cccccc;'], // 39
 			"g_2"			:["",		"",		"",		"",				"",			30],
 			"numpad0"		:["96",		"0",	"0",	"0",			"#99ffff",	90],
 			"numpadperiod"	:["110",	".",	".",	".",			"#cc99cc",	45]

@@ -15,12 +15,12 @@ _tt_lessons["standard_lessons_left"] = {
 	"title"	:"Left Hand Lessons", 
 	"lines"	:[
 		{
-			// basic key locations
+// basic key locations
 			"title"		:"Line 1",	"accuracy"	:100, "wpm":20,	"letters"	:"fghj jhgf fjgh jfhg fhjg jghf dfdf sfsf afaf kjkj ljlj"		},{
 			"title"		:"Line 2",	"accuracy"	:100, "wpm":20,	"letters"	:"fefe fwfw fqfq jiji jojo jpjp fzfz fxfx fcfc jmjm"			},{
 			"title"		:"Line 3",	"accuracy"	:100, "wpm":20,	"letters"	:"fvfv fcfc fxfx fzfz gbgb hnhn jmjm dcf sxf az axf"			},{
 			"title"		:"Line 4",	"accuracy"	:100, "wpm":20,	"letters"	:"tgbyhn thygngbh rvtbynum uvrmybtn fghj jhgf fdfsfa"			},{
-			// edrftgyhujik
+// edrftgyhujik
 			"title"		:"Line 5",	"accuracy"	:95, "wpm":20,	"letters"	:"de ed ef eh er et fe he re uh ut ye "							},{
 			"title"		:"Line 6",	"accuracy"	:95, "wpm":20,	"letters"	:"def dey dry due dug duh dye edh eft erg eth fed feh fer"		},{
 			"title"		:"Line 7",	"accuracy"	:95, "wpm":20,	"letters"	:"fet feu fey fry fud fug fur ged get gey gut guy her het"		},{
@@ -36,7 +36,7 @@ _tt_lessons["standard_lessons_left"] = {
 			"title"		:"Line 17",	"accuracy"	:95, "wpm":20,	"letters"	:"fudge guyed gyred hedgy hefty huger jerky judge juked"		},{
 			"title"		:"Line 18",	"accuracy"	:95, "wpm":20,	"letters"	:"kythe ryked teugh trued turfy tuyer tyred urged"				},{
 			"title"		:"Line 19",	"accuracy"	:95, "wpm":20,	"letters"	:"judger kythed trudge turfed turkey theurgy judger"			},{
-			// rfvtgbyhnujm
+// rfvtgbyhnujm
 			"title"		:"Line 20",	"accuracy"	:95, "wpm":20,	"letters"	:"by hm mu my nu uh um un ut by hm mu my nu uh um un ut"		},{
 			"title"		:"Line 21",	"accuracy"	:95, "wpm":20,	"letters"	:"bug bum bun bur but buy fry fub fug fun fur gnu gum gun"		},{
 			"title"		:"Line 22",	"accuracy"	:95, "wpm":20,	"letters"	:"gut guv guy gym hub hug hum hun hut jug jun jut mug mun"		},{
@@ -46,7 +46,7 @@ _tt_lessons["standard_lessons_left"] = {
 			"title"		:"Line 26",	"accuracy"	:95, "wpm":20,	"letters"	:"hymn jury myth numb ruby rung runt ruth thru thug trug"		},{
 			"title"		:"Line 27",	"accuracy"	:95, "wpm":20,	"letters"	:"tung turf turn vugh yurt brugh brung brunt burgh burnt"		},{
 			"title"		:"Line 28",	"accuracy"	:95, "wpm":20,	"letters"	:"grunt rhumb rugby runty thrum thumb turfy hungry"				},{
-			// qwerasdfzxcv
+// qwerasdfzxcv
 			"title"		:"Line 29",	"accuracy"	:95, "wpm":20,	"letters"	:"ad ae ar as aw ax de ed ef er es ex fa fe re we za ace"		},{
 			"title"		:"Line 30",	"accuracy"	:95, "wpm":20,	"letters"	:"ads adz arc are arf ars ave awe axe cad car caw daw def"		},{
 			"title"		:"Line 31",	"accuracy"	:95, "wpm":20,	"letters"	:"dev dew dex ear eds efs era ers fad far fas fax fed fer"		},{
@@ -73,18 +73,31 @@ _tt_lessons["standard_lessons_left"] = {
 			"title"		:"Line 52",	"accuracy"	:95, "wpm":20,	"letters"	:"waver waves waxed waxer waxes wears zarfs zaxes cadres"		},{
 			"title"		:"Line 53",	"accuracy"	:95, "wpm":20,	"letters"	:"carved carves cavers cedars craved craves crazed crazes"		},{
 			"title"		:"Line 54",	"accuracy"	:95, "wpm":20,	"letters"	:"decafs dewars dwarfs facers faders farced farces sacred"		},{
-			"title"		:"Line 55",	"accuracy"	:95, "wpm":20,	"letters"	:"scared waders wafers wavers waxers dwarves scarfed"		},{
-			// uiopjklm
+			"title"		:"Line 55",	"accuracy"	:95, "wpm":20,	"letters"	:"scared waders wafers wavers waxers dwarves scarfed"			},{
+// uiopjklm
 			"title"		:"Line 56",	"accuracy"	:95, "wpm":20,	"letters"	:"jo ki li lo mi mo mu oi om op pi um up ilk imp kip koi"		},{
 			"title"		:"Line 57",	"accuracy"	:95, "wpm":20,	"letters"	:"kop lip lop lum mil mol mop oil piu poi pol pom pul ump"		},{
 			"title"		:"Line 58",	"accuracy"	:95, "wpm":20,	"letters"	:"upo jimp jouk jump kilo koji limo limp loup lump milk"		},{
-			"title"		:"Line 59",	"accuracy"	:95, "wpm":20,	"letters"	:"milo moil plum puli mujik opium poilu pulik moujik"		},{
-			// fghjqazpol
-			"title"		:"Line 60",	"accuracy"	:95, "wpm":20,	"letters"	:"ag ah al fa go ha ho jo la lo of oh op pa za ago alp"		},{
-			"title"		:"Line 61",	"accuracy"	:95, "wpm":20,	"letters"	:"apo azo fag fog foh fop gal gap goa hag haj hao hap"		},{
-			"title"		:"Line 62",	"accuracy"	:95, "wpm":20,	"letters"	:"hog hop jag jog lag lap log lop oaf pah pal poh pol"		},{
-			"title"		:"Line 63",	"accuracy"	:95, "wpm":20,	"letters"	:"zag zap zoa flag flap flog flop foal gaol glop goal"		},{
-			"title"		:"Line 64",	"accuracy"	:95, "wpm":20,	"letters"	:"golf half halo holp loaf opah opal qoph galop jalop"
+			"title"		:"Line 59",	"accuracy"	:95, "wpm":20,	"letters"	:"milo moil plum puli mujik opium poilu pulik moujik"			},{
+// fghjqazpol
+			"title"		:"Line 60",	"accuracy"	:95, "wpm":20,	"letters"	:"ag ah al fa go ha ho jo la lo of oh op pa za ago alp"			},{
+			"title"		:"Line 61",	"accuracy"	:95, "wpm":20,	"letters"	:"apo azo fag fog foh fop gal gap goa hag haj hao hap"			},{
+			"title"		:"Line 62",	"accuracy"	:95, "wpm":20,	"letters"	:"hog hop jag jog lag lap log lop oaf pah pal poh pol"			},{
+			"title"		:"Line 63",	"accuracy"	:95, "wpm":20,	"letters"	:"zag zap zoa flag flap flog flop foal gaol glop goal"			},{
+			"title"		:"Line 64",	"accuracy"	:95, "wpm":20,	"letters"	:"golf half halo holp loaf opah opal qoph galop jalop"			},{
+// Programming & Syntax
+			"title"		:"Line 65",	"accuracy"	:95, "wpm":20,	"letters"	:"!@#$% ^&*()_+ +_)(*&^ %$#@! !@#$% ^&*()_+"					},{
+			"title"		:"Line 66",	"accuracy"	:95, "wpm":20,	"letters"	:";'\/ p[] 0-= =-0 ][p /\'; ;'\/ p[] =-0"						},{
+			"title"		:"Line 67",	"accuracy"	:95, "wpm":20,	"letters"	:"1`1 1~1 ;/; ,<, .>. /?/ ;:; '\"' \\|\\ ]}] [{[ "				},{
+			"title"		:"Line 68",	"accuracy"	:95, "wpm":20,	"letters"	:"#15 @ $56.80 = 17%, 15*(12+3)=15^2, 2-4 != 4-2"				},{
+			"title"		:"Line 69",	"accuracy"	:95, "wpm":20,	"letters"	:"if($totalqty ==0) {echo \"you did not order anything\";}"		},{
+			"title"		:"Line 70",	"accuracy"	:95, "wpm":20,	"letters"	:"if(document.images) && (prelodFlag ==)) {for var i=0;"		},{
+			"title"		:"Line 71",	"accuracy"	:95, "wpm":20,	"letters"	:">>> for n in [1, 2, 3]: print n; %d x 7 = %d % (j,j*7)"		},{
+			"title"		:"Line 72",	"accuracy"	:95, "wpm":20,	"letters"	:"void main() {int angle_degree; double angle_radian, pi"		},{
+			"title"		:"Line 73",	"accuracy"	:95, "wpm":20,	"letters"	:"if(chdir $where){ #we got there } else { #not }"				},{
+			"title"		:"Line 74",	"accuracy"	:95, "wpm":20,	"letters"	:"if (index >= size) throw new ArrayIndexOutOfBounds"
+
+
 /*
 			"title"		:"Line ",	"accuracy"	:95, "wpm":20,	"letters"	:""		},{
 			"title"		:"Line ",	"accuracy"	:95, "wpm":20,	"letters"	:""		},{

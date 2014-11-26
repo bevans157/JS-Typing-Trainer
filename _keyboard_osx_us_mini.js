@@ -115,14 +115,14 @@ _tt_keyboards["osx_us_mini"] = [
 			"rcommand"		:["91",		"",		"",		"cmd",			"#cccccc",	69,		48],
 			"roption"		:["18",		"",		"",		"opt",			"#ff6666",	40,		48],
 			"g_1"			:["",		"",		"",		"",				"",			45],
-			"arrowup"		:["38",		"",		"",		"&uarr;",		"#9999ff",	45,		"",	'line-height: 16px;'],
+			"arrowup"		:["",		"",		"",		"&uarr;",		"#9999ff",	45,		"",	'line-height: 16px;color: #cccccc;'], // 38
 			"g_2"			:["",		"",		"",		"",				"",			45]
 		}],[
 		{"style":		'height: 24px;line-height: 18px;margin-left: 191px;margin-right: 191px;'},
 		{	"g_1"			:["",		"",		"",		"",				"",			523],
-			"arrowleft"		:["37",		"",		"",		"&larr;",		"#99ffff",	45],
-			"arrowdown"		:["40",		"",		"",		"&darr;",		"#9999ff",	45,		"",	'line-height: 16px;'],
-			"arrowright"	:["39",		"",		"",		"&rarr;",		"#cc99cc",	45]
+			"arrowleft"		:["",		"",		"",		"&larr;",		"#99ffff",	45,	"",	"",	'color: #cccccc;'], // 37
+			"arrowdown"		:["",		"",		"",		"&darr;",		"#9999ff",	45,	"",	"",	'color: #cccccc;'], // 40
+			"arrowright"	:["",		"",		"",		"&rarr;",		"#cc99cc",	45,	"",	"",	'color: #cccccc;']  // 39
 
 
 		}],[
