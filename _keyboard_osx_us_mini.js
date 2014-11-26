@@ -88,7 +88,7 @@ _tt_keyboards["osx_us_mini"] = [
 			"j"				:["74",		"j",	"J",	"J",			"#99ffff",	45],
 			"k"				:["75",		"k",	"K",	"K",			"#9999ff",	45],
 			"l"				:["76",		"l",	"L",	"L",			"#cc99cc",	45],
-			"semicolon"		:["186",	";",	":",	";\n:",			"#ffccff",	45],
+			"semicolon"		:["186",	";",	":",	":\n;",			"#ffccff",	45],
 			"singlequote"	:["222",	"'",	"\"",	"\"\n'",		"#ffccff",	45],
 			"return"		:["13",		"\n",	"",		"ret",			"#ffccff",	81]
 		}],[
@@ -101,9 +101,9 @@ _tt_keyboards["osx_us_mini"] = [
 			"b"				:["66",		"b",	"B",	"B",			"#99ff99",	45],
 			"n"				:["78",		"n",	"N",	"N",			"#99ffff",	45],
 			"m"				:["77",		"m",	"M",	"M",			"#99ffff",	45],
-			"comma"			:["188",	",",	"<",	",\n<",			"#9999ff",	45],
-			"period"		:["190",	".",	">",	".\n>",			"#cc99cc",	45],
-			"fslash"		:["191",	"/",	"?",	"/\n?",			"#ffccff",	45],
+			"comma"			:["188",	",",	"<",	"<\n,",			"#9999ff",	45],
+			"period"		:["190",	".",	">",	">\n.",			"#cc99cc",	45],
+			"fslash"		:["191",	"/",	"?",	"?\n/",			"#ffccff",	45],
 			"rshift"		:["16",		"",		"",		"shift",		"#ffccff",	104]
 		}],[
 		{"style":		'height: 24px;line-height: 32px;margin-left: 191px;margin-right: 191px;'},
