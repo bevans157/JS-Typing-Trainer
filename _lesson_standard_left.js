@@ -11,8 +11,8 @@ if (typeof _tt_lessons === 'undefined') {
 }
 
 
-_tt_lessons["standard_lessons"] = {
-	"title"	:"Standard Lessons", 
+_tt_lessons["standard_lessons_left"] = {
+	"title"	:"Left Hand Lessons", 
 	"lines"	:[
 		{
 			"title"		:"Line 1",	"accuracy"	:95, "wpm":20,

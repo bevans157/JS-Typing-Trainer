@@ -23,6 +23,7 @@ $( document ).ready(function() {
 	// Populate the keyboard list
 	var keyboards = Object.keys(_tt_keyboards);
 	var keyMap = {};
+	var keyDivs = [];
 	var typedStack = [];
 	var lineStack = [];
 	var lineStart = 0;
@@ -78,12 +79,21 @@ $( document ).ready(function() {
 		llList.val(_tt_line);
 		setLine(_tt_line);
 	}
+
 	// Add change event to line selector
 	var llList = $("#_tt_line_list");
 	llList.change(function () {
 	    $( "#_tt_line_list option:selected" ).each(function() {
 			setLine($( this ).val());
 		});
+	});
+
+	$( "#_tt_btn_report" ).click( function() {
+		var report = '';
+		for (i = 0; i < reportCard.length; i++) { 
+			report += reportCard[i]["lesson"]+":"+reportCard[i]["line"]+" WPM["+reportCard[i]["wpm"]+"] Accuracy["+reportCard[i]["accuracy"]+"]\n";
+		}
+		alert(report);
 	});
 
 	$( "#_tt_display_input" ).on( "keydown", function( event ) {
@@ -107,11 +117,10 @@ $( document ).ready(function() {
 			if (state == "run") {
 				next = reportCard.length;
 				reportCard[next] = {
-					"lesson"	:"",
-					"line"		:"",
-					"wpm"		:"",
-					"accuracy"	:"",
-					"pass"		:""
+					"lesson"	:_tt_lesson,
+					"line"		:_tt_lessons[_tt_lesson]["lines"][_tt_line]["titleha"],
+					"wpm"		:genWPM(),
+					"accuracy"	:genAccuracy()
 				};
 				if ( _tt_lessons[_tt_lesson]["lines"].length > (_tt_line +1) ) {
 					// Advance tonext lesson
@@ -154,14 +163,14 @@ $( document ).ready(function() {
 		var lineOut = '';
 		var hit = 0;
 		var miss = 0;
-		var cursorFlag = true;
+		var cursorChar = '';
 		for (i = 0; i < Math.max(typedStack.length, lineStack.length); i++) { 
 			if ((typedStack[i] === lineStack[i]) || ( typeof typedStack[i] === 'undefined' ) || ( typeof typedStack[i] === '' ) ){
 				charOut = (lineStack[i]==" ")?"&nbsp;":lineStack[i];
 				if ((typeof typedStack[i] === 'undefined') || ( typeof typedStack[i] === '' )) {
-					if (cursorFlag){
+					if (cursorChar === ''){
+						cursorChar = lineStack[i];
 						charOut = '<span class="cursor">'+charOut+'</span>';
-						cursorFlag = false;
 					}
 				}
 				else {hit++;}
@@ -172,10 +181,14 @@ $( document ).ready(function() {
 				miss++;
 			}
 		}
-		if (cursorFlag)	{lineOut += '<span class="cursor">&crarr;</span>';}
+		if (cursorChar === '')	{
+			cursorChar = "\n";
+			lineOut += '<span class="cursor">&crarr;</span>';
+		}
 		else			{lineOut += '&crarr;';}
 		$( "#_tt_display_line" ).html( lineOut );
 		$( "#_tt_display_report" ).html( "WPM:"+genWPM()+" &nbsp; Accuracy:"+genAccuracy()+"%" );
+		highlightKeys(cursorChar);
 	}
 
 	function genWPM() {
@@ -185,6 +198,7 @@ $( document ).ready(function() {
 		wpm = Math.round(wpm * 100) / 100;
 		return wpm;
 	}
+
 	function genAccuracy() {
 		var miss = 0;
 		var accuracy = 0;
@@ -199,7 +213,27 @@ $( document ).ready(function() {
 		return accuracy;
 	}
 
-
+	function highlightKeys(target) {
+		var shift = false;
+		var shifts = [];
+		for (i = 0; i < keyDivs.length; i++) { 
+			if (keyDivs[i]["char"] == target || keyDivs[i]["shiftchar"] == target) {
+				$( "#"+keyDivs[i]["id"] ).css("background-color", keyDivs[i]["color"]);
+				shift = (keyDivs[i]["shiftchar"] == target);
+			}
+			else {
+				$( "#"+keyDivs[i]["id"] ).css("background-color", "inherit");
+			}
+			if (keyDivs[i]["shift"]) {
+				shifts.push(i);
+			}
+		}
+		if (shift) {
+			for (i = 0; i < shifts.length; i++) { 
+				$( "#"+keyDivs[ shifts[i] ]["id"] ).css("background-color", keyDivs[ shifts[i] ]["color"]);
+			}
+		}
+	}
 
 	function setState(newState) {
 		if (newState == "none"){
@@ -225,6 +259,7 @@ $( document ).ready(function() {
 
 	function renderKeyboard(kbid) {
 		keyMap = {};
+		keyDivs = [];
 		var htmlOut = "";
 		for (i = 0; i < _tt_keyboards[kbid].length; i++) { 
 			var lstyle = ((typeof _tt_keyboards[kbid][i][0]["style"] === 'undefined')||(_tt_keyboards[kbid][i][0]["style"] == ""))?"":_tt_keyboards[kbid][i][0]["style"];
@@ -243,7 +278,15 @@ $( document ).ready(function() {
 				var keyHeight		= key[6];
 				var keyStyle		= key[7];
 				var keyInnerStyle	= key[8];
-
+				if (keyCode) {// only read divs for active keys
+					keyDivs[keyDivs.length] = {
+						"id"		:"kb_"+id,
+						"char"		:keyChar,
+						"shiftchar"	:keyShiftChar,
+						"shift"		:((keyCode == "16")?true:false),
+						"color"		:keyColor
+					};
+				}
 				keyLabel = ((typeof keyLabel === 'undefined')||(keyLabel == ""))?"":keyLabel.replace(/\n/, "<br />");
 				keyWidth = ((typeof keyWidth === 'undefined')||(keyWidth == ""))?"":keyWidth;
 				keyHeight = ((typeof keyHeight === 'undefined')||(keyHeight == ""))?"":keyHeight;
