@@ -96,7 +96,8 @@ $( document ).ready(function() {
 		alert(report);
 	});
 
-	$( "#_tt_display_input" ).on( "keydown", function( event ) {
+//	$( "#_tt_display_input" ).on( "keydown", function( event ) {
+	$( "body" ).on( "keydown", function( event ) {
 		if (event.which == 16) {return}; // ignore shift press
 		if (event.which == 17) {return}; // ignore control press
 		if (event.which == 18) {return}; // ignore option press
