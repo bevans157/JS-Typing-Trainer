@@ -107,7 +107,7 @@ _tt_keyboards["osx_us 2 hand"] = [
 			"numpaddash"	:["109",	"-",	"-",	"-",			"#ffccff",	45]
 		}],[
 		{},
-		{	"capslock"		:["20",		"",		"",		"capslock",		"#ff6666",	82],
+		{	"capslock"		:["20",		"",		"",		'capslock <div id="_tt_capslight"></div>',		"#ff6666",	82],
 			"a"				:["65",		"a",	"A",	"A",			"#ff6666",	45],
 			"s"				:["83",		"s",	"S",	"S",			"#ffdd99",	45],
 			"d"				:["68",		"d",	"D",	"D",			"#ffff99",	45],
