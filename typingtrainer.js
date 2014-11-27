@@ -124,7 +124,7 @@ $( document ).ready(function() {
 					"accuracy"	:genAccuracy()
 				};
 				if ( _tt_lessons[_tt_lesson]["lines"].length > (1+_tt_line) ) {
-					// Advance tonext lesson
+					// Advance to next lesson
 					lineStack = _tt_lessons[_tt_lesson]["lines"][_tt_line]["letters"].split("");
 					if (_tt_lessons[_tt_lesson]["lines"][_tt_line]["wpm"] <= genWPM() && 
 						_tt_lessons[_tt_lesson]["lines"][_tt_line]["accuracy"] <= genAccuracy() ) {
