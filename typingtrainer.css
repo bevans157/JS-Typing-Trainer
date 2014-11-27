@@ -69,6 +69,13 @@ body {
 	padding-bottom: 10px;
 }
 
+#_tt_capslight {
+	border: 1px solid black;
+	border-radius: 3px;
+	display:inline-block;
+	height:6px;
+	width:6px;
+}
 
 ._tt_header_left {
 	float: left;

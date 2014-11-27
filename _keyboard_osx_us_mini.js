@@ -62,7 +62,7 @@ _tt_keyboards["osx_us_mini"] = [
 			"backspace"		:["8",		"",		"",		"del",			"#ffccff",	73]
 		}],[
 		{"style":		'margin-left: 191px;margin-right: 191px;'},
-		{	"tab"			:["9",		"",		"",		"tab",			"#ff6666",	73],
+		{	"tab"			:["9",		"&rarr;","",	"tab",			"#ff6666",	73],
 			"q"				:["81",		"q",	"Q",	"Q",			"#ff6666",	45],
 			"w"				:["87",		"w",	"W",	"W",			"#ffdd99",	45],
 			"e"				:["69",		"e",	"E",	"E",			"#ffff99",	45],

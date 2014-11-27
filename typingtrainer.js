@@ -81,8 +81,7 @@ $( document ).ready(function() {
 	}
 
 	// Add change event to line selector
-	var llList = $("#_tt_line_list");
-	llList.change(function () {
+	$( "#_tt_line_list" ).change(function () {
 	    $( "#_tt_line_list option:selected" ).each(function() {
 			setLine($( this ).val());
 		});
@@ -102,23 +101,51 @@ $( document ).ready(function() {
 		alert(report);
 	});
 
+	var capsState = false;
+
+	$( "body" ).on( "keypress", function( event ) {  // caps lock state detect
+		var s = String.fromCharCode( event.which );
+		capsState = ( s.toUpperCase() === s && s.toLowerCase() !== s && !event.shiftKey );
+		capsRender();
+	});
+
+	$( "body" ).on( "keyup", function( event ) {
+		if (event.which == 20) { // caps lock release
+			capsState = false;
+			capsRender();
+			return false;
+		};
+	});
+
+	function capsRender() {
+		$( "#_tt_capslight" ).css("background-color", (capsState)?"#66ff66":"inherit");
+	}
+
 	$( "body" ).on( "keydown", function( event ) {
 		if (event.which == 16) {return}; // ignore shift press
 		if (event.which == 17) {return}; // ignore control press
 		if (event.which == 18) {return}; // ignore option press
 		if (event.which == 91) {return}; // ignore command press
+		if (event.which == 20) { // caps lock press
+			capsState = true;
+			capsRender();
+			return;
+		}
 		if (event.which == 8) { // Backspace
 			if (state == "run") {
 				typedStack.pop();
 				renderLine();
-				return;
 			}
-			else{
-				return;
-			}
+			return;
 		};
 		var shifted = event.shiftKey;
 		var key = event.which;
+		if ( keyMap[key] && keyMap[key][false] != "" && keyMap[key][true] != "" &&
+			keyMap[key][false].toUpperCase() === keyMap[key][true] && 
+			keyMap[key][false].toLowerCase() !== keyMap[key][true] 
+			) { // is shiftable ?
+			shifted = ((shifted)? !capsState : capsState) ; // resolve shift and capslock
+		}
 		if (key == 13) { // return key
 			if (state == "run") {
 				addReport();
@@ -138,11 +165,11 @@ $( document ).ready(function() {
 		}
 		else{
 			lineAdd(key, shifted);
-			if (state != "run") {
-				setState("run");
-			}
 		}
-		return false;
+		if (typeof keyMap[key] !== 'undefined' && keyMap[key][false] != "" && keyMap[key][false] != " ") {
+			return; // allows printable keys to bubble 
+		}
+		return false; // stops key events from bubbling
 	});
 
 	$( "body" ).click( function() {
@@ -150,7 +177,12 @@ $( document ).ready(function() {
 	});
 
 	function lineAdd(code, shifted) {
-		typedStack[typedStack.length] = keyMap[code][shifted];
+		if (typeof keyMap[code] !== 'undefined') {
+			typedStack[typedStack.length] = keyMap[code][shifted];
+			if (state != "run") {
+				setState("run");
+			}
+		}
 		renderLine();
 	}
 
