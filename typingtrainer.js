@@ -89,14 +89,19 @@ $( document ).ready(function() {
 	});
 
 	$( "#_tt_btn_report" ).click( function() {
+		restartLine();
 		var report = '';
+		var lessonHead = '';
 		for (i = 0; i < reportCard.length; i++) { 
-			report += reportCard[i]["lesson"]+":"+reportCard[i]["line"]+" WPM["+reportCard[i]["wpm"]+"] Accuracy["+reportCard[i]["accuracy"]+"]\n";
+			if (lessonHead != reportCard[i]["lesson"]) {
+				lessonHead = reportCard[i]["lesson"];
+				report += reportCard[i]["lesson"]+":\n";
+			}
+			report += reportCard[i]["line"]+": "+reportCard[i]["wpm"]+"/WPM "+reportCard[i]["accuracy"]+"%/AC\n";
 		}
 		alert(report);
 	});
 
-//	$( "#_tt_display_input" ).on( "keydown", function( event ) {
 	$( "body" ).on( "keydown", function( event ) {
 		if (event.which == 16) {return}; // ignore shift press
 		if (event.which == 17) {return}; // ignore control press
@@ -116,13 +121,7 @@ $( document ).ready(function() {
 		var key = event.which;
 		if (key == 13) { // return key
 			if (state == "run") {
-				next = reportCard.length;
-				reportCard[next] = {
-					"lesson"	:_tt_lesson,
-					"line"		:_tt_lessons[_tt_lesson]["lines"][_tt_line]["title"],
-					"wpm"		:genWPM(),
-					"accuracy"	:genAccuracy()
-				};
+				addReport();
 				if ( _tt_lessons[_tt_lesson]["lines"].length > (1+_tt_line) ) {
 					// Advance to next lesson
 					lineStack = _tt_lessons[_tt_lesson]["lines"][_tt_line]["letters"].split("");
@@ -144,6 +143,10 @@ $( document ).ready(function() {
 			}
 		}
 		return false;
+	});
+
+	$( "body" ).click( function() {
+		restartLine()
 	});
 
 	function lineAdd(code, shifted) {
@@ -196,7 +199,7 @@ $( document ).ready(function() {
 		var wpm = 0;
 		if (typedStack.length == 0) {return 0}
 		wpm = (typedStack.length/6)/ (((new Date()).getTime() - lineStart) / (1000*60));
-		wpm = Math.round(wpm * 100) / 100;
+		wpm = Math.round(wpm);
 		return wpm;
 	}
 
@@ -210,8 +213,20 @@ $( document ).ready(function() {
 			}
 		}
 		accuracy = ((typedStack.length-miss)/typedStack.length)*100;
-		accuracy = Math.round(accuracy * 100) / 100;
+		accuracy = Math.round(accuracy);
 		return accuracy;
+	}
+	
+	function addReport() {
+		if (state == 'run') {
+			next = reportCard.length;
+			reportCard[next] = {
+				"lesson"	:_tt_lesson,
+				"line"		:_tt_lessons[_tt_lesson]["lines"][_tt_line]["title"],
+				"wpm"		:genWPM(),
+				"accuracy"	:genAccuracy()
+			};
+		}
 	}
 
 	function highlightKeys(target) {
@@ -236,6 +251,11 @@ $( document ).ready(function() {
 		}
 	}
 
+	function restartLine() {
+		addReport();
+		setLine(_tt_line);
+	}
+
 	function setState(newState) {
 		if (newState == "none"){
 			newState = "none";
@@ -248,7 +268,7 @@ $( document ).ready(function() {
 		else if (newState == "run") {
 			newState = "run";
 			lineStart = (new Date()).getTime();
-			userMessage("Hit enter to finish line");
+			userMessage("Hit enter or left-click mouse to finish line <br />");
 		}
 		else {
 			newState = "wait";
@@ -274,15 +294,15 @@ $( document ).ready(function() {
 				var keyCode			= key[0];
 				var keyChar			= key[1];
 				var keyShiftChar	= key[2];
-				keyMap[keyCode] = {};
-				keyMap[keyCode][false] = keyChar;
-				keyMap[keyCode][true] = keyShiftChar;
 				var keyLabel		= key[3];
 				var keyColor		= key[4];
 				var keyWidth		= key[5];
 				var keyHeight		= key[6];
 				var keyStyle		= key[7];
 				var keyInnerStyle	= key[8];
+				keyMap[keyCode] = {};
+				keyMap[keyCode][false] = keyChar;
+				keyMap[keyCode][true] = keyShiftChar;
 				if (keyCode) {// only read divs for active keys
 					keyDivs[keyDivs.length] = {
 						"id"		:"kb_"+id,
@@ -311,6 +331,7 @@ $( document ).ready(function() {
 		}
 		var keyboard = $("#_tt_keyboard_div");
 		keyboard.html(htmlOut);
+		renderLine();
 	}
 
 });
